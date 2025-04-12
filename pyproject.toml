@@ -1,0 +1,52 @@
+[project]
+name = "loan-ranger"
+version = "0.1.0"
+description = "Short module to do some simple simulation on loan."
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = ["ipython>=9.1.0", "numpy>=2.2.4", "scipy>=1.15.2"]
+
+[dependency-groups]
+dev = ["black>=25.1.0", "ruff>=0.11.5"]
+
+[tool.ruff]
+extend-exclude = [
+  ".git",
+  ".ruff_cache",
+  ".pytest_cache",
+  ".venv",
+  "build",
+  "dist",
+  "*.egg-info",
+  "tests",
+  "docs",
+  #"*.ipynb",
+  "dev_notebooks",
+]
+line-length = 120
+indent-width = 4
+# superseeded by project.requires-python
+# target-version = ['py310']
+fix = true
+
+[tool.ruff.lint]
+select = [
+  "E",    # pycodestyle
+  "F",    # pyflake
+  "I",    # isort
+  "C901", # mccabe
+  "BLE",  # blind except
+  "UP",   # pyupgrade
+  "A",    # flake8-builtins
+  # "G",    # logging format
+  # "T20",  # flake8-print
+]
+ignore = ["F503", "E203", "E712"]
+
+[tool.ruff.lint.pycodestyle]
+# equivalent to flake8 --max-line-length=120
+max-line-length = 120
+
+[tool.ruff.lint.mccabe]
+# equivalent to flake8 --max-complexity=10
+max-complexity = 10
