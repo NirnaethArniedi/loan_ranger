@@ -3,6 +3,14 @@
 Rapide module pour calculer différents paramètres
 d'un emprunt immobilier.
 
+## Dépendances
+
+- `python>3.10`
+- `numpy`
+- `scipy`
+
+(For more details see `pyproject.toml` file or the Dev stuff below)
+
 ## Utilisation
 
 ### Short version
@@ -30,6 +38,8 @@ loan_ranger.full_simu()
 ```
 
 ## Structure
+
+All code lives in `loan_ranger` folder.
 
 - `common_objects`: Rapide structure pour stocker input et résultat (plus propre que de balader des tuples à rallonge)
 - `core_functions`: Sexy stuff, là ou sont les calculs "compliqué
